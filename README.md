@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Event List app
+
+Proof of concept app that pulls upcoming events from the [public Ticketmaster API](https://developer.ticketmaster.com/products-and-docs/apis/getting-started/) and allows the user to build a list of events they are interested in.
+
+Built with [React](https://react.dev/), [Redux Toolkit](https://redux-toolkit.js.org/), and [Next.js](https://nextjs.org/) bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
