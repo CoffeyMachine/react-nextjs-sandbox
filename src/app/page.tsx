@@ -3,20 +3,23 @@
 import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '@/lib/hooks'
 import { fetchAllEvents } from '../lib/eventsSlice'
+import EventListing from './components/eventListing'
 
 
 export default function Home() {
   const state = useAppSelector((state) => state)
-  const { events } = state
+  const events = state.events as any
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(fetchAllEvents())
   }, [dispatch])
 
   return (
-    events?.data?._embedded?.events.map((event) => {
+    events?.data?._embedded?.events.map((event: any) => {
       return (
-        <h3>{event.name}</h3>
+        <div>
+          <EventListing event={event}/>
+        </div>
       )
     })
   )

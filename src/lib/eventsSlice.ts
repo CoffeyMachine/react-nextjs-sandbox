@@ -12,6 +12,7 @@ const eventsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllEvents.fulfilled, (state, action) => {
+        //TODO: transform data into a more safe & consistent structure. API data is all over the place
         state.data = action.payload
         state.fetchStatus = 'success'
       })
