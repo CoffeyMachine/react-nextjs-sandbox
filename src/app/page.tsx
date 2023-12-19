@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '@/lib/hooks'
 import { fetchAllEvents } from '../lib/eventsSlice'
 import EventListing from './components/eventListing'
+import Navigation from './components/navigation'
 
 
 export default function Home() {
@@ -15,12 +16,16 @@ export default function Home() {
   }, [dispatch])
 
   return (
-    events?.data?._embedded?.events.map((event: any) => {
-      return (
-        <div>
-          <EventListing event={event}/>
-        </div>
-      )
-    })
+    <div>
+      <Navigation></Navigation>
+      {events?.data?._embedded?.events.map((event: any) => {
+        return (
+          <div>
+            <EventListing event={event}/>
+          </div>
+        )
+      })
+    }
+    </div>
   )
 }
