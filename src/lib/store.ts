@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import eventsSlice from './eventsSlice';
+import favoritesSlice from './favoritesSlice';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      // myEvents: myEventsSlice.reducer,
+      favorites: favoritesSlice.reducer,
       events: eventsSlice.reducer,
     }
   })

@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 export const fetchAllEvents = createAsyncThunk('fetch-all-events', async () => {
+  //TODO: move this to server side
   const response = await fetch('https://app.ticketmaster.com/discovery/v2/events.json?size=10&apikey=AgaOIhn82BpAEl8gZbX7aQbhfAWzJ2tY')
   return response.json()
 })
